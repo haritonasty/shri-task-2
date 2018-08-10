@@ -1,0 +1,35 @@
+{
+  "name": "shri-task-2",
+  "version": "1.0.0",
+  "description": "Тестовое задание № 2 в Яндекс ШРИ",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=development ./node_modules/.bin/gulp dev",
+    "prod": "NODE_ENV=production ./node_modules/.bin/gulp dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haritonasty/shri-task-2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/haritonasty/shri-task-2/issues"
+  },
+  "homepage": "https://github.com/haritonasty/shri-task-2#readme",
+  "devDependencies": {
+    "browser-sync": "^2.24.6",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-clean-css": "^3.9.4",
+    "gulp-concat": "^2.6.1",
+    "gulp-if": "^2.0.2",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.1",
+    "gulp-rigger": "^0.5.8",
+    "gulp-uglifyes": "^0.1.3"
+  }
+}
