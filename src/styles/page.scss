@@ -1,0 +1,50 @@
+@import 'mixin';
+
+.page {
+  overflow-x: hidden;
+  position: relative;
+  @include respond-to(big-landscape) {
+    display: grid;
+    grid-template-areas: 'h h' 'c a' 's s' 'f f';
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 12.2vh 53vh 1fr 8.5vh;
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+  }
+}
+
+.page__header {
+  @include respond-to(big-landscape) {
+    grid-area: h;
+    overflow: hidden;
+  }
+}
+
+.page__main {
+  @include respond-to(big-landscape) {
+    grid-area: c;
+    overflow: hidden;
+  }
+}
+
+.page__article {
+  @include respond-to(big-landscape) {
+    grid-area: a;
+    overflow: hidden;
+  }
+}
+
+.page__section {
+  @include respond-to(big-landscape) {
+    grid-area: s;
+    overflow: hidden;
+  }
+}
+
+.page__footer {
+  @include respond-to(big-landscape) {
+    grid-area: f;
+    overflow: hidden;
+  }
+}

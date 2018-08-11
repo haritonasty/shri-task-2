@@ -6,6 +6,7 @@ const concat = require('gulp-concat');
 const rigger = require('gulp-rigger');
 const uglifyes = require('gulp-uglifyes');
 const cleanCss = require('gulp-clean-css');
+const scsslint = require('gulp-scss-lint');
 const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
 const browserSync = require('browser-sync').create();
@@ -15,9 +16,10 @@ const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV === 'develop
 gulp.task('styles', function () {
   return gulp.src('src/styles/**/*.scss')
     .pipe(gulpIf(isDevelopment, sourcemaps.init()))
+    .pipe(scsslint())
     .pipe(sass())
     .pipe(autoprefixer({ browsers: ['last 2 versions'] }))
-    .pipe(concat('main.css'))
+    .pipe(concat('style.css'))
     .pipe(cleanCss())
     .pipe(gulpIf(isDevelopment, sourcemaps.write()))
     .pipe(gulp.dest('public'));
@@ -38,7 +40,7 @@ gulp.task('scripts', function () {
 });
 
 gulp.task('html', function () {
-  return gulp.src('src/*.html')
+  return gulp.src('src/**/*.html')
     .pipe(rigger())
     .pipe(gulp.dest('public'))
 });
