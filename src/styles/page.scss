@@ -1,4 +1,4 @@
-@import 'mixin';
+@import 'shared/mixin';
 
 .page {
   overflow-x: hidden;
@@ -17,7 +17,6 @@
 .page__header {
   @include respond-to(big-landscape) {
     grid-area: h;
-    overflow: hidden;
   }
 }
 

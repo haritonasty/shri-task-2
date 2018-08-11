@@ -1,8 +1,0 @@
-@import 'mixin';
-
-.header {
-  @include respond-to(small-portrait) { background-color: #8acbe2; }
-  @include respond-to(small-landscape) { background-color: #00f; }
-  @include respond-to(big-portrait) { background-color: #bc8f8f; }
-  @include respond-to(big-landscape) { background-color: #0ff; }
-}

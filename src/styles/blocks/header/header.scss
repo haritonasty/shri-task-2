@@ -1,0 +1,54 @@
+@import '../../shared/variables';
+@import '../../shared/mixin';
+
+.header {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+
+  @include respond-to(small-portrait) {
+    height: 17vw;
+  }
+
+  @include respond-to(small-landscape) {
+    height: 10vw;
+  }
+
+  @include respond-to(big-portrait) {
+    border-bottom: 1px solid $border;
+    height: 9vh;
+  }
+
+  @include respond-to(big-landscape) {
+    border-bottom: 1px solid $border;
+    height: 12.2vh;
+  }
+}
+
+.page__header {
+  position: relative;
+}
+
+.header__inner {
+  align-items: center;
+  display: flex;
+  min-width: 89vw;
+  width: 89vw;
+
+  @include respond-to(small-portrait) {
+    justify-content: space-between;
+  }
+
+  @include respond-to(small-landscape) {
+  }
+
+  @include respond-to(big-portrait) {
+  }
+
+  @include respond-to(big-landscape) {
+    width: 90vw;
+  }
+}

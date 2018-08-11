@@ -1,0 +1,39 @@
+@import '../../shared/variables';
+@import '../../shared/mixin';
+
+.button-close {
+  border: 0;
+  padding: 5vw;
+  width: 5vw;
+  height: 5vw;
+
+
+  &::before,
+  &::after {
+    content: '';
+    left: 20%;
+    top: 50%;
+    position: absolute;
+    width: 6vw;
+    height: 0.6vw;
+    border-radius: 5px;
+
+    background-color: $primary-color;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+}
+
+
+.main-nav__button-close{
+  position: absolute;
+  top: 4vw;
+  right: 4vw;
+  background-color: inherit;
+}
