@@ -1,0 +1,151 @@
+@import '../../shared/variables';
+@import '../../shared/mixin';
+
+.content__info {
+  display: flex;
+  flex-direction: column;
+  margin: 0 5.6vw;
+  @include respond-to(small-landscape) {
+    flex-direction: row;
+  }
+
+  @include respond-to(big-portrait) {
+    flex-direction: row;
+  }
+  @include respond-to(big-landscape) {
+    flex-direction: column;
+    margin: 1.6vw 0;
+  }
+}
+
+.content__greeter {
+  margin-bottom: 4vw;
+
+  @include respond-to(small-landscape) {
+    margin-right: 7vw;
+    max-width: 35vw;
+  }
+
+  @include respond-to(big-portrait) {
+    margin-bottom: 4vw;
+    margin-right: 7vw;
+    max-width: 43vw;
+  }
+
+  @include respond-to(big-landscape) {
+    margin-bottom: 1.8vw;
+  }
+}
+
+.content__greeter-name {
+  font-size: 4.85vw;
+  margin: 0;
+  margin-bottom: 1.2vw;
+  padding: 0;
+  @include respond-to(small-landscape) {
+    font-size: 3vw;
+  }
+
+  @include respond-to(big-portrait) {
+    font-size: 3vw;
+  }
+
+  @include respond-to(big-landscape) {
+    font-size: 1.82vw;
+    margin-bottom: .4vw;
+  }
+}
+
+.content__greeter-text {
+  font-size: 3vw;
+  margin: 0;
+  padding: 0;
+
+  @include respond-to(small-landscape) {
+    font-size: 2vw;
+  }
+
+  @include respond-to(big-portrait) {
+    font-size: 2vw;
+  }
+
+  @include respond-to(big-landscape) {
+    font-size: .875vw;
+  }
+}
+
+.content__forecast {
+  display: flex;
+}
+
+.content__forecast-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.content__forecast-item_home {
+  margin-right: 5vw;
+  @include respond-to(big-portrait) {
+    margin-right: 3vw;
+  }
+
+  @include respond-to(big-landscape) {
+    margin-right: 1.3vw;
+  }
+}
+
+.content__forecast-where {
+  color: $additional-color;
+  font-size: 3vw;
+  margin-bottom: 2vw;
+
+  @include respond-to(small-landscape) {
+    font-size: 2.5vw;
+    margin-bottom: 1.2vw;
+  }
+
+  @include respond-to(big-portrait) {
+    font-size: 2.5vw;
+  }
+
+  @include respond-to(big-landscape) {
+    font-size: .875vw;
+    margin-bottom: .15vw;
+  }
+}
+
+.content__forecast-degrees {
+  color: $base-color;
+  font-size: 6.5vw;
+
+  @include respond-to(small-landscape) {
+    font-size: 5vw;
+  }
+
+  @include respond-to(big-portrait) {
+    font-size: 4vw;
+  }
+
+  @include respond-to(big-landscape) {
+    font-size: 2.4vw;
+  }
+}
+
+.content__forecast-icon {
+  height: 5vw;
+  width: 5vw;
+  @include respond-to(small-landscape) {
+    height: 4vw;
+    width: 4vw;
+  }
+
+  @include respond-to(big-portrait) {
+    height: 3vw;
+    width: 3vw;
+  }
+
+  @include respond-to(big-landscape) {
+    height: 1.7vw;
+    width: 1.7vw;
+  }
+}

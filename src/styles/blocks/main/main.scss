@@ -1,0 +1,95 @@
+@import '../../shared/variables';
+@import '../../shared/mixin';
+
+.main__inner {
+  display: flex;
+  flex-direction: column;
+  padding: 0 5vw;
+  @include respond-to(small-portrait) {
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5vw;
+  }
+
+  @include respond-to(small-landscape) {
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5vw;
+  }
+
+  @include respond-to(big-portrait) {
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5vh;
+  }
+
+  @include respond-to(big-landscape) {
+    max-height: 53vh;
+    padding: 0 .9vw 0 6vw;
+  }
+}
+
+.main__title {
+  @include respond-to(small-portrait) {
+    display: none;
+  }
+
+  @include respond-to(small-landscape) {
+    display: none;
+  }
+
+  @include respond-to(big-portrait) {
+    display: none;
+  }
+
+  @include respond-to(big-landscape) {
+    font-size: 1.2vw;
+    margin: 2vw 0 1.5vw;
+    padding: 0;
+  }
+}
+
+.content {
+  background: no-repeat 43% 43%;
+  background-size: cover;
+  border-radius: 5vw;
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 100%;
+
+  @include respond-to(small-portrait) {
+    background-image: url('./bg@2x.png');
+  }
+
+  @include respond-to(small-landscape) {
+    background-image: url('./bg@2x.png');
+  }
+
+  @include respond-to(big-portrait) {
+    background-image: url('./bg@1x.png');
+    border-radius: 3vw;
+  }
+
+  @include respond-to(big-landscape) {
+    background-image: url('./bg@1x.png');
+    border-radius: 1.3vw;
+    flex-direction: row;
+  }
+
+}
+
+.content__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5.4vw 0;
+
+  @include respond-to(big-portrait) {
+    padding: 3vw 0;
+  }
+  @include respond-to(big-landscape) {
+    flex-direction: row;
+    padding: 0 1.8vw;
+  }
+}
+

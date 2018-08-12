@@ -18,7 +18,6 @@
   }
 
   @include respond-to(big-portrait) {
-    border-bottom: 1px solid $border;
     height: 9vh;
   }
 
