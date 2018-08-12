@@ -3,6 +3,7 @@
 
 .scrollable {
   overflow: hidden;
+  width: 100%;
   @include respond-to(small-portrait) {
     height: 33vw;
   }
@@ -27,6 +28,13 @@
   }
 }
 
+.scrollable_3-columns {
+  @include respond-to(big-landscape) {
+    height: 23vw;
+    width: 43vw;
+  }
+}
+
 .scrollable__wrap-scroll {
   overflow: auto;
   position: relative;
@@ -39,6 +47,7 @@
   @include respond-to(big-landscape) {
     padding-right: 25px;
     padding-bottom: 0;
+    width: 43vw;
   }
 }
 
@@ -47,7 +56,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
+  //height: 100%;
 }
 
 .scrollable-block__content_vertical {
@@ -56,28 +65,70 @@
   }
 }
 
-.scrollable__arrows {
-  display: none;
-
+.scrollable-block__content_3-columns {
+  @include respond-to(big-landscape) {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    max-height: 43vw;
+  }
 }
 
-.scrollable__arrows_visible{
+.scrollable__arrows {
+  display: none;
+}
+
+.scrollable__arrow-button {
+  margin: 0;
+  padding: 1vh .5vw;
+  border-radius: 2vw;
+  border: 0;
+  outline: 0;
+  background: none;
+}
+
+.scrollable__arrows_visible {
   @include respond-to(big-landscape) {
     display: flex;
     flex-direction: column;
+    z-index: 10;
+  }
+}
+
+.main__scrollable__arrows {
+  @include respond-to(big-landscape) {
     position: absolute;
     bottom: 1.5vw;
-    z-index: 10;
-    left: 43%;
+    left: 6vw;
+    fill: $additional-color;
   }
+}
+
+.scenarios__scrollable__arrows {
+  display: flex;
+  z-index: 10;
+  position: absolute;
+  top: 2vw;
+  right: 5.5vw;
+  fill: #000;
+  opacity: .3;
+}
+
+.scrollable__arrow_active {
+  opacity: 1;
 }
 
 .scrollable__arrow_top {
   transform: rotate(-90deg);
   width: 1vw;
   height: 1vw;
-  fill: $additional-color;
-  &:first-child {
-    margin-bottom: -.5vw;
-  }
+}
+
+.scrollable__arrow_bottom {
+  transform: rotate(90deg);
+  width: 1vw;
+  height: 1vw;
+}
+
+.scrollable__arrow_top_margin-bottom {
+  margin-bottom: -.5vw;
 }

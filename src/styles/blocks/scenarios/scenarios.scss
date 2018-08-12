@@ -1,0 +1,60 @@
+@import '../../shared/variables';
+@import '../../shared/mixin';
+
+.scenarios{
+}
+
+.scenarios__inner{
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  align-items: flex-start;
+  position: relative;
+  @include respond-to(small-portrait) {
+    margin-bottom: 5vw;
+  }
+
+  @include respond-to(small-landscape) {
+    margin-bottom: 5vw;
+  }
+
+  @include respond-to(big-portrait) {
+    margin-bottom: 5vh;
+  }
+
+  @include respond-to(big-landscape) {
+    max-height: 53vh;
+    padding: 0 .9vw 0 1vw;
+  }
+}
+
+.scenarios__title{
+  @include respond-to(small-portrait) {
+    font-size: 4.8vw;
+    margin: 2vw 0 4vw 5vw;
+    padding: 0;
+  }
+
+  @include respond-to(small-landscape) {
+    font-size: 2.4vw;
+    margin: 2vw 0 3.5vw 6vw;
+    padding: 0;
+
+  }
+
+  @include respond-to(big-portrait) {
+
+    font-size: 3vw;
+    margin: 0 0 1.5vw 6vw;
+    padding: 0;
+
+  }
+
+  @include respond-to(big-landscape) {
+    font-size: 1.2vw;
+    margin: 2vw 0 1.5vw;
+    padding: 0;
+
+  }
+}
+

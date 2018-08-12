@@ -1,8 +1,7 @@
 @import 'variables';
 @import 'mixin';
 
-
-.task{
+.task {
   cursor: pointer;
   border-radius: 5vw;
   background-color: $block-background;
@@ -22,16 +21,16 @@
     min-width: 52vw;
     min-height: 30vw;
     height: 32.5vw;
-  margin-right: 6vw;
+    margin-right: 6vw;
   }
 
   @include respond-to(small-landscape) {
-  border-radius: 3vw;
+    border-radius: 3vw;
     min-width: 30vw;
     min-height: 18vw;
     height: 18vw;
-  padding: 2.3vw;
-  margin-right: 4vw;
+    padding: 2.3vw;
+    margin-right: 4vw;
   }
 
   @include respond-to(big-portrait) {
@@ -45,8 +44,8 @@
   }
 
   @include respond-to(big-landscape) {
-  //margin-right: 4vw;
-  border-radius: 2.3vw;
+    //margin-right: 4vw;
+    border-radius: 2.3vw;
     min-width: 13.5vw;
     min-height: 21vw;
     margin-left: 0;
@@ -55,29 +54,59 @@
   }
 }
 
-.task_first{
+.task_small {
+  @include respond-to(small-portrait) {
+    height: 29.5vw;
+  }
+
+  @include respond-to(small-landscape) {
+    height: 17.5vw;
+  }
+
+  @include respond-to(big-portrait) {
+    height: 18.5vw;
+  }
+
+  @include respond-to(big-landscape) {
+    height: 7vw;
+    min-height: 7vw;
+    max-width: 10vw;
+    margin-right: 1vw;
+    margin-top: 0;
+    border-radius: 1.3vw;
+    margin-bottom: .7vw;
+  }
+}
+
+.task_first {
   margin-left: 6vw;
 }
 
-.task_vertical{
+.task_first_3-columns {
+  @include respond-to(big-landscape) {
+    margin-left: 0;
+  }
+}
+
+.task_vertical {
   @include respond-to(big-landscape) {
     margin-right: 0;
     border-radius: 1.3vw;
     min-width: 13.5vw;
     width: 13.5vw;
-    min-height: 15.7vh;
+    min-height: 8.3vw;
+    height: 8.3vw;
     margin-left: 0;
     margin-top: 2.1vh;
     padding: 1.4vh .5vw 2vh 1.1vw;
   }
 }
 
-
-.task__icon{
+.task__icon {
   margin-bottom: 1vw;
   @include respond-to(small-portrait) {
     width: 8vw;
-    height: 8vw;
+    height: 9vw;
   }
 
   @include respond-to(small-landscape) {
@@ -97,20 +126,20 @@
 
 }
 
-.task__text{
+.task__text {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.task__title{
+.task__title {
   margin-bottom: 0.7vh;
   @include respond-to(small-portrait) {
-  font-size: 3.8vw;
+    font-size: 3.8vw;
   }
 
   @include respond-to(small-landscape) {
-  font-size: 2.3vw;
+    font-size: 2.3vw;
   }
 
   @include respond-to(big-portrait) {
@@ -122,14 +151,14 @@
   }
 }
 
-.task__info{
+.task__info {
   color: $additional-color;
   @include respond-to(small-portrait) {
-  font-size: 3vw;
+    font-size: 3vw;
   }
 
   @include respond-to(small-landscape) {
-  font-size: 1.7vw;
+    font-size: 1.7vw;
   }
 
   @include respond-to(big-portrait) {
