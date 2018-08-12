@@ -5,7 +5,7 @@
   box-sizing: border-box;
   padding: 2vw 6vw;
   @include respond-to(small-portrait) {
-    font-size: 3vw;
+    font-size: 2.6vw;
     height: 12vw;
   }
 
@@ -52,7 +52,7 @@
 .footer__nav-item {
   list-style: none;
   @include respond-to(small-portrait) {
-    margin-right: 3vw;
+    margin-right: 2.3vw;
   }
 
   @include respond-to(small-landscape) {
