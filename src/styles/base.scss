@@ -30,6 +30,22 @@ html {
   }
 }
 
+
+@include respond-to(small-portrait) {
+}
+
+@include respond-to(small-landscape) {
+}
+
+@include respond-to(big-portrait) {
+}
+
+@include respond-to(big-landscape) {
+}
+
+
+
+
 body {
   opacity: .6;
 }
