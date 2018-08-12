@@ -1,0 +1,143 @@
+@import 'variables';
+@import 'mixin';
+
+
+.task{
+  cursor: pointer;
+  border-radius: 5vw;
+  background-color: $block-background;
+  display: flex;
+  padding: 3.2vw;
+  flex-direction: column;
+  box-sizing: border-box;
+  justify-content: space-between;
+
+  &:hover {
+    background-color: $base-background;
+    box-shadow: 0 2px 6px 0 rgba(197, 186, 186, .50);
+    transition-duration: .1s;
+  }
+
+  @include respond-to(small-portrait) {
+    min-width: 52vw;
+    min-height: 30vw;
+    height: 32.5vw;
+  margin-right: 6vw;
+  }
+
+  @include respond-to(small-landscape) {
+  border-radius: 3vw;
+    min-width: 30vw;
+    min-height: 18vw;
+    height: 18vw;
+  padding: 2.3vw;
+  margin-right: 4vw;
+  }
+
+  @include respond-to(big-portrait) {
+    margin-right: 4vw;
+    min-width: 30vw;
+    min-height: 19vw;
+    height: 19vw;
+    margin-left: 0;
+    margin-top: 2.1vh;
+    padding: 2.5vw;
+  }
+
+  @include respond-to(big-landscape) {
+  //margin-right: 4vw;
+  border-radius: 2.3vw;
+    min-width: 13.5vw;
+    min-height: 21vw;
+    margin-left: 0;
+    margin-top: 2.1vh;
+    padding: 1.4vh 0.5vw 2vh 1.1vw;
+  }
+}
+
+.task_first{
+  margin-left: 6vw;
+}
+
+.task_vertical{
+  @include respond-to(big-landscape) {
+    margin-right: 0;
+    border-radius: 1.3vw;
+    min-width: 13.5vw;
+    width: 13.5vw;
+    min-height: 15.7vh;
+    margin-left: 0;
+    margin-top: 2.1vh;
+    padding: 1.4vh .5vw 2vh 1.1vw;
+  }
+}
+
+
+.task__icon{
+  margin-bottom: 1vw;
+  @include respond-to(small-portrait) {
+    width: 8vw;
+    height: 8vw;
+  }
+
+  @include respond-to(small-landscape) {
+    width: 4vw;
+    height: 4vw;
+  }
+
+  @include respond-to(big-portrait) {
+    width: 4vw;
+    height: 4vw;
+  }
+
+  @include respond-to(big-landscape) {
+    width: 1.6vw;
+    height: 3.8vh;
+  }
+
+}
+
+.task__text{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.task__title{
+  margin-bottom: 0.7vh;
+  @include respond-to(small-portrait) {
+  font-size: 3.8vw;
+  }
+
+  @include respond-to(small-landscape) {
+  font-size: 2.3vw;
+  }
+
+  @include respond-to(big-portrait) {
+    font-size: 2vw;
+  }
+
+  @include respond-to(big-landscape) {
+    font-size: .95vw;
+  }
+}
+
+.task__info{
+  color: $additional-color;
+  @include respond-to(small-portrait) {
+  font-size: 3vw;
+  }
+
+  @include respond-to(small-landscape) {
+  font-size: 1.7vw;
+  }
+
+  @include respond-to(big-portrait) {
+    font-size: 1.5vw;
+  }
+
+  @include respond-to(big-landscape) {
+    font-size: .775vw;
+  }
+}
+

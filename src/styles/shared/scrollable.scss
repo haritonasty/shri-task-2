@@ -1,0 +1,83 @@
+@import 'variables';
+@import 'mixin';
+
+.scrollable {
+  overflow: hidden;
+  @include respond-to(small-portrait) {
+    height: 33vw;
+  }
+
+  @include respond-to(small-landscape) {
+    height: 18.5vw;
+  }
+
+  @include respond-to(big-portrait) {
+    height: 21vw;
+  }
+
+  @include respond-to(big-landscape) {
+    height: 18.5vw;
+  }
+}
+
+.scrollable_vertical {
+  @include respond-to(big-landscape) {
+    height: 23vw;
+    width: 13.5vw;
+  }
+}
+
+.scrollable__wrap-scroll {
+  overflow: auto;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 25px;
+}
+
+.scrollable__wrap-scroll_vertical {
+  @include respond-to(big-landscape) {
+    padding-right: 25px;
+    padding-bottom: 0;
+  }
+}
+
+.scrollable-block__content {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.scrollable-block__content_vertical {
+  @include respond-to(big-landscape) {
+    flex-direction: column;
+  }
+}
+
+.scrollable__arrows {
+  display: none;
+
+}
+
+.scrollable__arrows_visible{
+  @include respond-to(big-landscape) {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 1.5vw;
+    z-index: 10;
+    left: 43%;
+  }
+}
+
+.scrollable__arrow_top {
+  transform: rotate(-90deg);
+  width: 1vw;
+  height: 1vw;
+  fill: $additional-color;
+  &:first-child {
+    margin-bottom: -.5vw;
+  }
+}
