@@ -35,7 +35,7 @@
 .header__inner {
   align-items: center;
   display: flex;
-  min-width: 89vw;
+  min-width: 87vw;
   width: 89vw;
 
   @include respond-to(small-portrait) {
@@ -49,6 +49,6 @@
   }
 
   @include respond-to(big-landscape) {
-    width: 90vw;
+    width: 87.5vw;
   }
 }

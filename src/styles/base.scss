@@ -19,7 +19,11 @@ body {
 html {
   background: no-repeat 50% 0;
   background-size: cover;
-  //background-image: url('./mobile.jpg');
+
+  @include respond-to(small-portrait) {
+    background-image: url('./mobile.jpg');
+  }
+
   @include respond-to(big-landscape) {
     background-image: url('./desctop.jpg');
     background-size: contain;
@@ -27,11 +31,10 @@ html {
 }
 
 body {
-  //opacity: .6;
+  opacity: .6;
 }
 
 // end testing styles
-
 
 .visually-hidden:not(:focus):not(:active) {
   border: 0;

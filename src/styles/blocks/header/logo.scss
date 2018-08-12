@@ -24,13 +24,15 @@
   }
 
   @include respond-to(small-landscape) {
+    margin-right: 5vw;
   }
 
   @include respond-to(big-portrait) {
+    margin-right: 5vw;
   }
 
   @include respond-to(big-landscape) {
-    margin-right: 4.7em;
+    margin-right: 3.1vw;
   }
 }
 

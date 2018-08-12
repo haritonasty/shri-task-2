@@ -3,22 +3,20 @@
 
 .button-close {
   border: 0;
+  height: 5vw;
   padding: 5vw;
   width: 5vw;
-  height: 5vw;
-
 
   &::before,
   &::after {
-    content: '';
-    left: 20%;
-    top: 50%;
-    position: absolute;
-    width: 6vw;
-    height: 0.6vw;
-    border-radius: 5px;
-
     background-color: $primary-color;
+    border-radius: 5px;
+    content: '';
+    height: .6vw;
+    left: 20%;
+    position: absolute;
+    top: 50%;
+    width: 6vw;
   }
 
   &::before {
@@ -30,10 +28,23 @@
   }
 }
 
+.main-nav__button-close {
+  @include respond-to(small-portrait) {
+    background-color: inherit;
+    position: absolute;
+    right: 4vw;
+    top: 4vw;
+  }
+  @include respond-to(small-landscape) {
+    display: none;
+  }
 
-.main-nav__button-close{
-  position: absolute;
-  top: 4vw;
-  right: 4vw;
-  background-color: inherit;
+  @include respond-to(big-portrait) {
+    display: none;
+  }
+
+  @include respond-to(big-landscape) {
+    display: none;
+  }
 }
+
