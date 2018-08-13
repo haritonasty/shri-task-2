@@ -47,7 +47,7 @@
     //margin-right: 4vw;
     border-radius: 2.3vw;
     min-width: 13.5vw;
-    min-height: 21vw;
+    min-height:8vw;
     margin-left: 0;
     margin-top: 2.1vh;
     padding: 1.4vh 0.5vw 2vh 1.1vw;
@@ -80,6 +80,13 @@
 
 .task_first {
   margin-left: 6vw;
+}
+
+.task_horizontal{
+  margin-right: 1vw;
+  @include respond-to(big-landscape) {
+    //margin-top: 0;
+  }
 }
 
 .task_first_3-columns {

@@ -21,7 +21,7 @@ html {
   background-size: cover;
 
   @include respond-to(small-portrait) {
-    background-image: url('./mobile.jpg');
+    //background-image: url('./mobile.jpg');
   }
 
   @include respond-to(big-landscape) {

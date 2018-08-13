@@ -51,7 +51,7 @@
   }
 }
 
-.scrollable-block__content {
+.scrollable__content {
   display: flex;
   position: absolute;
   top: 0;
@@ -59,13 +59,13 @@
   //height: 100%;
 }
 
-.scrollable-block__content_vertical {
+.scrollable__content_vertical {
   @include respond-to(big-landscape) {
     flex-direction: column;
   }
 }
 
-.scrollable-block__content_3-columns {
+.scrollable__content_3-columns {
   @include respond-to(big-landscape) {
     flex-wrap: wrap;
     align-items: flex-start;
@@ -77,7 +77,7 @@
   display: none;
 }
 
-.scrollable__arrow-button {
+.arrow-button {
   margin: 0;
   padding: 1vh .5vw;
   border-radius: 2vw;
@@ -86,7 +86,7 @@
   background: none;
 }
 
-.scrollable__arrows_visible {
+.arrows_visible {
   @include respond-to(big-landscape) {
     display: flex;
     flex-direction: column;
@@ -97,38 +97,71 @@
 .main__scrollable__arrows {
   @include respond-to(big-landscape) {
     position: absolute;
-    bottom: 1.5vw;
+    bottom: 1.2vw;
     left: 6vw;
-    fill: $additional-color;
+    //fill: $additional-color;
   }
 }
 
 .scenarios__scrollable__arrows {
-  display: flex;
-  z-index: 10;
-  position: absolute;
-  top: 2vw;
-  right: 5.5vw;
-  fill: #000;
+  display: none;
+  @include respond-to(big-landscape) {
+    z-index: 10;
+    display: flex;
+    position: absolute;
+    top: 2vw;
+    right: 5.5vw;
+  }
+}
+
+.devices__scrollable__arrows {
+  display: none;
+  @include respond-to(big-landscape) {
+    z-index: 10;
+    display: flex;
+    position: absolute;
+    top: 2vw;
+    right: 5.5vw;
+  }
+}
+
+.arrow {
+  fill: $base-color;
   opacity: .3;
 }
 
-.scrollable__arrow_active {
+.arrow_active {
   opacity: 1;
 }
 
-.scrollable__arrow_top {
+.arrow_top {
+  height: 1vw;
   transform: rotate(-90deg);
   width: 1vw;
-  height: 1vw;
 }
 
-.scrollable__arrow_bottom {
+.arrow_bottom {
+  height: 1vw;
   transform: rotate(90deg);
   width: 1vw;
-  height: 1vw;
 }
 
-.scrollable__arrow_top_margin-bottom {
+.arrow_left {
+  height: 1vw;
+  transform: rotate(-180deg);
+  width: 1vw;
+}
+
+.arrow_right {
+  height: 1vw;
+  width: 1vw;
+}
+
+.arrow_big {
+  height: 3vw;
+  width: 4.5vw;
+}
+
+.arrow_top_margin-bottom {
   margin-bottom: -.5vw;
 }

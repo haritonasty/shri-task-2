@@ -1,6 +1,6 @@
 const block = document.querySelector('.scrollable__wrap-scroll');
-const scrollArrows = document.querySelector('.scrollable__arrows');
+const scrollArrows = document.querySelector('.main__scrollable__arrows');
 
 block.addEventListener("scroll", function () {
-  scrollArrows.classList.remove('scrollable__arrows_visible');
+  scrollArrows.classList.remove('arrows_visible');
 });

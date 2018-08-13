@@ -3,11 +3,15 @@
 .page {
   overflow-x: hidden;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-around;
   @include respond-to(big-landscape) {
     display: grid;
     grid-template-areas: 'h h' 'c a' 's s' 'f f';
     grid-template-columns: 50% 50%;
-    grid-template-rows: 12.2vh 53vh 1fr 8.5vh;
+    grid-template-rows: 12.2vh 53vh 1fr 6.5vh;
     height: 100%;
     overflow: hidden;
     width: 100%;
@@ -27,14 +31,14 @@
   }
 }
 
-.page__article {
+.page__scenarios {
   @include respond-to(big-landscape) {
     grid-area: a;
     overflow: hidden;
   }
 }
 
-.page__section {
+.page__devices{
   @include respond-to(big-landscape) {
     grid-area: s;
     overflow: hidden;
