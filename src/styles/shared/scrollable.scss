@@ -158,8 +158,13 @@
 }
 
 .arrow_big {
-  height: 3vw;
-  width: 4.5vw;
+  height: 2.5vw;
+  width: 2.5vw;
+  margin-top: .9vw;
+  margin-left: 1.5vw;
+  @include respond-to(small-portrait) {
+    display: block;
+  }
 }
 
 .arrow_top_margin-bottom {
