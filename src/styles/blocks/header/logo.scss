@@ -20,9 +20,6 @@
 
 .header__logo {
   position: relative;
-  @include respond-to(small-portrait) {
-  }
-
   @include respond-to(small-landscape) {
     margin-right: 5vw;
   }

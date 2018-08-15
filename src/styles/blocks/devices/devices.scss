@@ -2,7 +2,6 @@
 @import '../../shared/mixin';
 
 .devices{
-
 }
 
 .page__devices{
@@ -25,18 +24,6 @@
   padding: 0;
   align-items: flex-start;
   position: relative;
-  @include respond-to(small-portrait) {
-  }
-
-  @include respond-to(small-landscape) {
-  }
-
-  @include respond-to(big-portrait) {
-  }
-
-  @include respond-to(big-landscape) {
-    //padding: 0 .9vw 0 1vw;
-  }
 }
 
 .devices__title{

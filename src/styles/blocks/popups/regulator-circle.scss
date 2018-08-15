@@ -1,0 +1,73 @@
+@import '../../shared/variables';
+@import '../../shared/mixin';
+
+:root {
+  --pos: 101grad;
+}
+
+.regulator_circle {
+  height: 100%;
+  //transform-origin: 50% 50%;
+  transform: rotate(0.325turn);
+  align-self: center;
+  stroke-width: 22px;
+  @include respond-to(small-portrait) {
+    width: 57vw;
+    margin-top: 12vw;
+    margin-bottom: 7vw;
+  }
+
+  @include respond-to(small-landscape) {
+    width: 18vw;
+  }
+
+  @include respond-to(big-portrait) {
+    width: 45vw;
+    margin-top: 2vw;
+    margin-bottom: 3vw;
+  }
+
+  @include respond-to(big-landscape) {
+    width: 15vw;
+  }
+}
+
+.circle-disabled {
+  stroke-dasharray: 525, 625;
+  stroke: rgba(51, 51, 51, 0.7);
+}
+
+.regulator_text {
+  transform-origin: center;
+  transform: rotate(-.325turn);
+  text-anchor: middle;
+  fill: $base-color;
+  font-size: 66px;
+}
+
+.circle-helper {
+  transform: rotate(-0.2turn);
+  stroke-dasharray: 125, 625;
+  stroke: $base-background;
+}
+
+.circle-background {
+  stroke-dasharray: 3.3, 0.9;
+  stroke-width: 23px;
+  stroke: $base-background;
+}
+
+.circle-enabled {
+  stroke-dasharray: 430;
+  stroke: #F5A623;
+}
+
+.regulator_triangle {
+  fill: $base-color;
+  stroke: $base-color;
+  stroke-linejoin: round;
+  stroke-width: 2px;
+  transform-origin: 50% 50%;
+  transform: rotate(calc(0.235turn + var(--pos) * 2.69)) translateX(110px) translateY(20px);
+}
+

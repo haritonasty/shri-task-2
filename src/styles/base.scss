@@ -21,11 +21,11 @@ html {
   background-size: cover;
 
   @include respond-to(small-portrait) {
-    //background-image: url('./mobile.jpg');
+    //background-image: url('./mobile1.jpg');
   }
 
   @include respond-to(big-landscape) {
-    background-image: url('./desctop.jpg');
+    //background-image: url('./desctop1.jpg');
     background-size: contain;
   }
 }
@@ -47,7 +47,7 @@ html {
 
 
 body {
-  opacity: .6;
+  //opacity: .6;
 }
 
 // end testing styles

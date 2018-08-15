@@ -1,25 +1,25 @@
-let btn = document.querySelector(".dropdown__button");
-let btnText = document.querySelector(".dropdown__button-text");
-let dropdown = document.querySelector(".dropdown__inner");
-let optionLinks = document.getElementsByClassName("dropdown__option");
+const dropdownButton = document.querySelector(".dropdown__button");
+const dropdownButtonText = document.querySelector(".dropdown__button-text");
+const dropdown = document.querySelector(".dropdown__inner");
+const dropdownOptions = document.getElementsByClassName("dropdown__option");
 
 
-for (let i = 0; i < optionLinks.length; i++) {
-  optionLinks[i].addEventListener("click", clickFn, false);
+for (let option of dropdownOptions) {
+  option.addEventListener("click", selectOption, false);
 }
 
-btn.addEventListener("click", function (e) {
+dropdownButton.addEventListener("click", function (e) {
   e.preventDefault();
   dropdown.classList.toggle("dropdown__inner_open");
 });
 
-function clickFn(e) {
+function selectOption(e) {
   e.preventDefault();
 
-  btnText.innerHTML = this.innerHTML;
+  dropdownButtonText.innerHTML = this.innerHTML;
 
   dropdown.classList.remove("dropdown__inner_open");
   let activeLink = document.querySelector(".dropdown__option_active");
   if (activeLink) activeLink.classList.remove("dropdown__option_active");
   this.classList.add("dropdown__option_active");
-};
+}

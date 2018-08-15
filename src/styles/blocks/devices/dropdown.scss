@@ -103,13 +103,13 @@
   display: flex;
   flex-direction: column;
   max-height: 18vh;
-  overflow: auto;
   padding: 0;
   width: 100%;
   margin: 0;
   touch-action: manipulation;
   cursor: pointer;
   @include respond-to(small-portrait) {
+    overflow: scroll;
   }
 
   @include respond-to(small-landscape) {
@@ -133,7 +133,7 @@
   @include respond-to(small-portrait) {
   }
   @include respond-to(small-landscape) {
-    padding: 1.1vw  1.4vw;
+    padding: 1.1vw 1.4vw;
     font-weight: 700;
     font-size: 1.7vw;
     border-radius: 1.7vw;
@@ -165,4 +165,4 @@
   background-color: $yellow;
 }
 
-$easing: cubic-bezier(0.5, 2, 0.5, 0.75);
+$easing: cubic-bezier(.5, 2, .5, .75);

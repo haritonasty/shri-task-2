@@ -1,0 +1,101 @@
+<div class="modal" role="dialog">
+    <div class="modal__inner">
+        <div class="device device_temp modal__device">
+            <h3 class="device__name">Elgato Eve Degree Connected</h3>
+            <span class="device__mode">Включено</span>
+            <div class="device__indicator">
+                <div class="device__indicator-inner">
+                    <ul class="device__indicator-list">
+                        <li class="device__indicator-item device__indicator-item_active">Вручную</li>
+                        <li class="device__indicator-item">Холодно</li>
+                        <li class="device__indicator-item">Тепло</li>
+                        <li class="device__indicator-item">Жарко</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="device__value-current value-current">
+                <span class="value-current__numbers">+23</span>
+                <svg class="value-current__img">
+                    <use xlink:href='#temp-color'/>
+                </svg>
+            </div>
+            <div class="device__regulator regulator regulator__range">
+                <span class="regulator__value-min regulator__value">-10</span>
+                <span class="regulator__value-max regulator__value">+30</span>
+                <input type="range" title="indicator" min="-10" max="30" value="23" oninput="updateTextInput(this);"
+                       class="regulator__value_current">
+            </div>
+
+        </div>
+
+
+        <div class="device device_light modal__device">
+            <h3 class="device__name">Xiaomi Yeelight LED Smart Bulb</h3>
+            <span class="device__mode">Включится в 17:00</span>
+            <div class="device__indicator">
+                <div class="device__indicator-inner">
+                    <ul class="device__indicator-list">
+                        <li class="device__indicator-item device__indicator-item_active">Вручную</li>
+                        <li class="device__indicator-item">Дневной свет</li>
+                        <li class="device__indicator-item">Вечерний свет</li>
+                        <li class="device__indicator-item device__indicator-item_last">Рассвет</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="device__value-current value-current">
+                <span class="value-current__numbers"></span>
+                <svg class="value-current__img">
+                    <use xlink:href='#sun'/>
+                </svg>
+            </div>
+            <div class="device__regulator regulator regulator__range">
+        <span class="regulator__value-min regulator__value"><svg class="value-min__img value__img">
+        <use xlink:href='#sun-min'/>
+        </svg></span>
+                <span class="regulator__value-max regulator__value"><svg class="value-max__img value__img">
+        <use xlink:href='#sun-max'/>
+        </svg></span>
+                <input type="range" title="indicator" min="-10" max="30" value="23" oninput="updateTextInput(this);"
+                       class="regulator__value_current">
+            </div>
+        </div>
+
+
+        <div class="device device_floor modal__device ">
+            <div class="hidden-scroll">
+                <div class="hidden-scroll__wrap">
+                    <div class="hidden-scroll__content"></div>
+                </div>
+            </div>
+            <h3 class="device__name">Xiaomi Warm Floor</h3>
+            <span class="device__mode">Включено</span>
+
+            <div class="value-current device__value-current">
+                <span class="value-current__numbers">+23</span>
+                <svg class="value-current__img">
+                    <use xlink:href='#temp-color'/>
+                </svg>
+            </div>
+            <svg viewBox="0 0 221 221" class="device__regulator regulator regulator_circle">
+                <circle cx="50%" cy="50%" r="45%" class="circle-disabled" fill="none"></circle>
+                <circle cx="50%" cy="50%" r="45%" class="circle-enabled" fill="none"></circle>
+                <circle cx="50%" cy="50%" r="45%" class="circle-helper" fill="none"></circle>
+                <circle cx="50%" cy="50%" r="45%" class="circle-background" fill="none"></circle>
+                <filter id="circle-shadow">
+                    <feDropShadow dx="2" dy="1" stdDeviation="4" flood-color="rgba(134,121,71,0.45)"></feDropShadow>
+                </filter>
+                <circle cx="50%" cy="50%" r="40%" fill="white" style="filter:url(#circle-shadow)"></circle>
+                <path d="M 12 4 L 17 9 L 7 9 z" class="regulator_triangle"></path>
+                <text x="49%" y="59%" class="regulator_text">+23</text>
+            </svg>
+        </div>
+
+
+        <div class="modal__buttons">
+            <button type="button" class="modal__button modal__button_accept">Применить</button>
+            <button type="button" class="modal__button modal__button_decline">Закрыть</button>
+        </div>
+
+    </div>
+</div>
+

@@ -40,13 +40,6 @@
   @include respond-to(small-portrait) {
     justify-content: space-between;
   }
-
-  @include respond-to(small-landscape) {
-  }
-
-  @include respond-to(big-portrait) {
-  }
-
   @include respond-to(big-landscape) {
     width: 87.5vw;
   }

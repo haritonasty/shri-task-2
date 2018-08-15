@@ -1,0 +1,216 @@
+@import '../../shared/variables';
+@import '../../shared/mixin';
+
+.regulator__range {
+  align-self: center;
+  position: relative;
+
+  @include respond-to(small-portrait) {
+    transform: rotate(90deg);
+    width: 100%;
+  }
+
+  @include respond-to(small-landscape) {
+    width: 96%;
+  }
+
+  @include respond-to(big-portrait) {
+    width: 100%;
+  }
+
+  @include respond-to(big-landscape) {
+    width: 100%;
+  margin: 2vw 0;
+  }
+}
+
+.regulator__value {
+  position: absolute;
+  font-size: 1vw;
+  color: $base-background;
+  @include respond-to(small-portrait) {
+    top: 46%;
+  font-size: 5vw;
+    transform: rotate(-90deg);
+  }
+
+  @include respond-to(small-landscape) {
+    top: 23%;
+  font-size: 3vw;
+  }
+
+  @include respond-to(big-portrait) {
+    top: 23%;
+  font-size: 3vw;
+  }
+
+  @include respond-to(big-landscape) {
+    top: 29%;
+  font-size: 1vw;
+  }
+}
+
+.regulator__value-min {
+  @include respond-to(small-portrait) {
+    left: 4.3vw;
+  }
+
+  @include respond-to(small-landscape) {
+    left: 2vw;
+  }
+
+  @include respond-to(big-portrait) {
+    left: 1.9vw;
+  }
+
+  @include respond-to(big-landscape) {
+    left: .65vw;
+  }
+
+}
+
+.regulator__value-max {
+  @include respond-to(small-portrait) {
+    right: 2.8vw;
+  }
+
+  @include respond-to(small-landscape) {
+    right: 1vw;
+  }
+
+  @include respond-to(big-portrait) {
+    right: 1.5vw;
+  }
+
+  @include respond-to(big-landscape) {
+    right: .4vw;
+  }
+}
+
+.value__img {
+  @include respond-to(small-portrait) {
+    height: 7vw;
+    margin-top: -2vw;
+    width: 7vw;
+  }
+
+  @include respond-to(small-landscape) {
+    height: 5vw;
+    width: 5vw;
+  }
+
+  @include respond-to(big-portrait) {
+    height: 4vw;
+    width: 4vw;
+  }
+
+  @include respond-to(big-landscape) {
+    height: 3vh;
+    width: 2vw;
+  }
+}
+
+.regulator__value_current {
+  -webkit-appearance: none;
+  background: transparent;
+  width: 100%;
+  @include respond-to(small-portrait) {
+    height: 85vw;
+  }
+
+  &::-moz-focus-outer {
+    border: 0;
+  }
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  /*input[type=range]::-ms-track {*/
+
+  /*!* Hides the slider so custom styles can be added *!*/
+  /*background: transparent;*/
+  /*border-color: transparent;*/
+  /*color: transparent;*/
+  /*outline: none;*/
+  /*}*/
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 4px solid #FFF;
+    border-radius: 50%;
+    box-shadow: 0 1px 10px -7px rgba(0, 0, 0, 0.50), inset 0 0 0 3px rgba(51, 51, 51, 0.10);
+    height: 60px;
+    width: 60px;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  &::-moz-range-thumb {
+    box-shadow: 0 1px 10px -7px rgba(0, 0, 0, 0.50), inset 0 0 0 3px rgba(51, 51, 51, 0.10);
+    border-radius: 50%;
+    border: 4px solid #FFF;
+    height: 60px;
+    width: 60px;
+    background: transparent;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+
+  /*input[type=range]::-ms-thumb {*/
+  /*box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;*/
+  /*border: 1px solid #000000;*/
+  /*height: 36px;*/
+  /*width: 16px;*/
+  /*border-radius: 3px;*/
+  /*background: #ffffff;*/
+  /*cursor: pointer;*/
+  /*}*/
+
+  &::-webkit-slider-runnable-track {
+    height: 60px;
+    border-radius: 35px;
+    cursor: pointer;
+  }
+}
+
+.device_light {
+  & .regulator__value_current::-webkit-slider-runnable-track {
+    background-image: linear-gradient(90deg, #FFE88C 0%, #FFB100 100%);
+  }
+  & .regulator__value_current::-moz-range-track {
+    background-image: linear-gradient(90deg, #FFE88C 0%, #FFB100 100%);
+  }
+}
+
+.device_temp {
+  & .regulator__value_current::-webkit-slider-runnable-track {
+    background-image: linear-gradient(90deg, #068FFF 2%, #FFD800 51%, #F76B1C 100%);
+  }
+  & .regulator__value_current::-moz-range-track {
+    background-image: linear-gradient(90deg, #068FFF 2%, #FFD800 51%, #F76B1C 100%);
+  }
+}
+
+.regulator__value_current::-moz-range-track {
+  height: 60px;
+  border-radius: 35px;
+  cursor: pointer;
+  border-color: transparent;
+  color: transparent;
+}
+
+/* All the same stuff for IE */
+/*input[type=range]::-ms-thumb {*/
+/*box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;*/
+/*border: 1px solid #000000;*/
+/*height: 36px;*/
+/*width: 16px;*/
+/*border-radius: 3px;*/
+/*background: #ffffff;*/
+/*cursor: pointer;*/
+/*}*/
