@@ -14,15 +14,16 @@
                 </div>
             </div>
             <div class="device__value-current value-current">
-                <span class="value-current__numbers">+23</span>
+                <span class="value-current__numbers device_temp">+23</span>
                 <svg class="value-current__img">
-                    <use xlink:href='#temp-color'/>
+                    <use xlink:href='#temp-color'></use>
                 </svg>
             </div>
             <div class="device__regulator regulator regulator__range">
                 <span class="regulator__value-min regulator__value">-10</span>
                 <span class="regulator__value-max regulator__value">+30</span>
-                <input type="range" title="indicator" min="-10" max="30" value="23" oninput="updateTextInput(this);"
+                <input type="range" title="indicator" min="-10" max="30" value="23"
+                       oninput="updateTextInput(this.value);"
                        class="regulator__value_current">
             </div>
 
@@ -45,18 +46,17 @@
             <div class="device__value-current value-current">
                 <span class="value-current__numbers"></span>
                 <svg class="value-current__img">
-                    <use xlink:href='#sun'/>
+                    <use xlink:href='#sun'></use>
                 </svg>
             </div>
             <div class="device__regulator regulator regulator__range">
         <span class="regulator__value-min regulator__value"><svg class="value-min__img value__img">
-        <use xlink:href='#sun-min'/>
+        <use xlink:href='#sun-min'></use>
         </svg></span>
                 <span class="regulator__value-max regulator__value"><svg class="value-max__img value__img">
-        <use xlink:href='#sun-max'/>
+        <use xlink:href='#sun-max'></use>
         </svg></span>
-                <input type="range" title="indicator" min="-10" max="30" value="23" oninput="updateTextInput(this);"
-                       class="regulator__value_current">
+                <input type="range" title="indicator" min="-10" max="30" value="23" class="regulator__value_current">
             </div>
         </div>
 
@@ -71,9 +71,9 @@
             <span class="device__mode">Включено</span>
 
             <div class="value-current device__value-current">
-                <span class="value-current__numbers">+23</span>
+                <span class="value-current__numbers device_floor">+23</span>
                 <svg class="value-current__img">
-                    <use xlink:href='#temp-color'/>
+                    <use xlink:href='#temp-color'></use>
                 </svg>
             </div>
             <svg viewBox="0 0 221 221" class="device__regulator regulator regulator_circle">

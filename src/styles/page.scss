@@ -1,12 +1,12 @@
 @import 'shared/mixin';
 
 .page {
-  overflow-x: hidden;
-  position: relative;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   justify-content: space-around;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
   @include respond-to(big-landscape) {
     display: grid;
     grid-template-areas: 'h h' 'c a' 's s' 'f f';
@@ -27,14 +27,12 @@
 .page__main {
   @include respond-to(big-landscape) {
     grid-area: c;
-    overflow: hidden;
   }
 }
 
 .page__scenarios {
   @include respond-to(big-landscape) {
     grid-area: a;
-    overflow: hidden;
   }
 }
 
@@ -48,6 +46,5 @@
 .page__footer {
   @include respond-to(big-landscape) {
     grid-area: f;
-    overflow: hidden;
   }
 }

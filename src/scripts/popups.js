@@ -2,9 +2,7 @@ const devicesLight = document.getElementsByClassName('light');
 const devicesFloor = document.getElementsByClassName('floor');
 const devicesTemp = document.getElementsByClassName('temp');
 
-
 const modalDevices = document.getElementsByClassName('modal__device');
-
 
 const modalDeviceLight = document.querySelector('.device_light');
 const modalDeviceFloor = document.querySelector('.device_floor');
@@ -44,8 +42,8 @@ for (device of devicesLight) {
   })
 }
 
-for (device of devicesTemp) {
-  device.addEventListener('click', () => {
+for (let i = 0; i < devicesTemp.length; i++) {
+  devicesTemp[i].addEventListener('click', () => {
     togglePopup();
     modalDeviceTemp.classList.add('modal__device_open');
   })
@@ -97,4 +95,5 @@ function initInteractive() {
     text.innerHTML = `+${currGradText}`;
   }
 }
+
 

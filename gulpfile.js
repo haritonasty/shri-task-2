@@ -40,7 +40,7 @@ gulp.task('scripts', function () {
 });
 
 gulp.task('html', function () {
-  return gulp.src('src/**/*.html')
+  return gulp.src('src/*.html')
     .pipe(rigger())
     .pipe(gulp.dest('public'))
 });

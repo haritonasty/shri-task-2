@@ -58,20 +58,20 @@
   width: 100%;
 
   @include respond-to(small-portrait) {
-    background-image: url('./bg@2x.png');
+    background-image: url('./bg@1x.png');
   }
 
   @include respond-to(small-landscape) {
-    background-image: url('./bg@2x.png');
+    background-image: url('./bg@1x.png');
   }
 
   @include respond-to(big-portrait) {
-    background-image: url('./bg@1x.png');
+    background-image: url('./bg@2x.png');
     border-radius: 3vw;
   }
 
   @include respond-to(big-landscape) {
-    background-image: url('./bg@1x.png');
+    background-image: url('./bg@2x.png');
     border-radius: 1.3vw;
     flex-direction: row;
   }

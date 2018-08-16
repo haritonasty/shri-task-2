@@ -3,7 +3,7 @@
 
 .footer {
   box-sizing: border-box;
-  padding: 2vw 6vw;
+  padding: 1vw 6vw;
   @include respond-to(small-portrait) {
     font-size: 2.7vw;
     height: 12vw;

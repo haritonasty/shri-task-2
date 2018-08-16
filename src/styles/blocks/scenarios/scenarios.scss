@@ -2,6 +2,7 @@
 @import '../../shared/mixin';
 
 .scenarios{
+
 }
 
 .scenarios__inner{
@@ -39,22 +40,18 @@
     font-size: 2.4vw;
     margin: 2vw 0 3.5vw 6vw;
     padding: 0;
-
   }
 
   @include respond-to(big-portrait) {
-
     font-size: 3vw;
     margin: 0 0 1.5vw 6vw;
     padding: 0;
-
   }
 
   @include respond-to(big-landscape) {
     font-size: 1.2vw;
     margin: 2vw 0 1.5vw;
     padding: 0;
-
   }
 }
 

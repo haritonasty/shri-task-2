@@ -1,8 +1,5 @@
 const valueCurrent = document.querySelector('.value-current__numbers');
 
-function updateTextInput(e) {
-  valueCurrent.innerHTML = parseInt(e.value) > 0 ? `+${e.value}` : e.value;
+function updateTextInput(value) {
+  valueCurrent.innerHTML = parseInt(value) > 0 ? `+${value}` : value;
 }
-
-
-

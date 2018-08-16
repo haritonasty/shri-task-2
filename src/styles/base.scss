@@ -14,43 +14,6 @@ body {
   width: 100%;
 }
 
-// TODO just for test pixel-perfect  (remove it at the end)
-
-html {
-  background: no-repeat 50% 0;
-  background-size: cover;
-
-  @include respond-to(small-portrait) {
-    //background-image: url('./mobile1.jpg');
-  }
-
-  @include respond-to(big-landscape) {
-    //background-image: url('./desctop1.jpg');
-    background-size: contain;
-  }
-}
-
-
-@include respond-to(small-portrait) {
-}
-
-@include respond-to(small-landscape) {
-}
-
-@include respond-to(big-portrait) {
-}
-
-@include respond-to(big-landscape) {
-}
-
-
-
-
-body {
-  //opacity: .6;
-}
-
-// end testing styles
 
 .visually-hidden:not(:focus):not(:active) {
   border: 0;
