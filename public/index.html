@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 2</title>
+    <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width">
+</head>
+<body>
+    <svg style="display:none">
+        <symbol viewBox="0 0 26 26" id="cloud" stroke="#333" stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="3">
+            <path fill="none" d="M15 20v2m0-9v2m-5 7v2m0-9v2m11 .6A5 5 0 0 0 19 8h-1.3A8 8 0 1 0 5 16.3"></path>
+        </symbol>
+    
+        <symbol viewBox="0 0 24 24" id="sun" transform="translate(1 1)" fill="none" stroke="#333" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="2">
+            <circle cx="11" cy="11" r="5" stroke-opacity=".4"></circle>
+            <path stroke-opacity=".1"
+                  d="M11 0v2m0 18v2M3.2 3.2l1.4 1.4m12.8 12.8l1.4 1.4M0 11h2m18 0h2M3.2 18.8l1.4-1.4M17.4 4.6l1.4-1.4"></path>
+        </symbol>
+    
+        <symbol viewBox="0 0 24 24" id="sunshine" fill="none" transform="translate(1 1)" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="2">
+            <circle stroke="#F5A623" cx="11" cy="11" r="5"></circle>
+            <path d="M11 0v2m0 18v2M3.2 3.2l1.4 1.4m12.8 12.8l1.4 1.4M0 11h2m18 0h2M3.2 18.8l1.4-1.4M17.4 4.6l1.4-1.4"
+                  stroke="#FFD93E"></path>
+        </symbol>
+    
+        <symbol viewBox="0 0 30 30" id="sun-min" stroke="#FFF" stroke-width="2" fill="none" stroke-linecap="round">
+            <circle cx="15" cy="15" r="7"></circle>
+            <path d="M15 1v1m0 26v1M5 5l1 1m18 18l1 1M1 15h1m26 0h1M5 25l1-1M24 6l1-1"></path>
+        </symbol>
+    
+        <symbol viewBox="0 0 36 36" id="sun-max" transform="translate(2 2)" stroke="#FFF" stroke-width="3" fill="none"
+                stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="16" cy="16" r="7"></circle>
+            <path d="M16 0v3m0 26v3M5 5l2 2m18 18l2 2M0 16h3m26 0h3M5 27l2-2M25 7l2-2"></path>
+        </symbol>
+    
+        <symbol viewBox="0 0 24 24" id="temp" fill="none">
+            <path d="M14 14.8V3.5a2.5 2.5 0 1 0-5 0v11.3a4.5 4.5 0 1 0 5 0z" stroke-opacity=".4" stroke="#333"
+                  stroke-width="2"></path>
+            <circle fill-opacity=".1" fill="#333" cx="11.5" cy="18.5" r="3.5"></circle>
+        </symbol>
+    
+        <symbol viewBox="0 0 24 24" id="temp-color" fill="none">
+            <path d="M14 14.8V3.5a2.5 2.5 0 1 0-5 0v11.3a4.5 4.5 0 1 0 5 0z" stroke="#F5A623" stroke-width="2"></path>
+            <circle fill="#FFD93E" cx="11.5" cy="18.5" r="3.5"></circle>
+        </symbol>
+    
+        <symbol id="schedule"
+            viewBox="0 0 30 30"
+            fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            transform="translate(2 2)">
+                <circle cx="10" cy="10" r="10"></circle>
+                <path d="M10 4v6l3 3" opacity=".3"></path>
+    
+        </symbol>
+    
+        <symbol viewBox="0 0 450 450" id="arrow">
+            <path d="M345.4 248.3L151.2 442.6a31.6 31.6 0 1 1-44.8-44.8l172-171.9L106.3 54a31.6 31.6 0 0 1 44.8-44.7l194.2 194.3a31.5 31.5 0 0 1 0 44.7z"></path>
+        </symbol>
+    </svg>
+    <div class="page">
+        <header class="header page__header">
+            <div class="header__inner">
+                <a class="logo header__logo">
+                    <img src="./logo.svg" alt="ЯндексДОМ" class="logo__img">
+                </a>
+        
+                <button class="button-burger header__button-burger" type="button">
+                    <span class="visually-hidden">Открыть меню</span>
+                </button>
+                <nav class="main-nav main-nav__hidden page__main-nav">
+                    <div class="main-nav__inner main-nav__inner_hidden">
+                        <button class="button-close main-nav__button-close" type="button">
+                            <span class="visually-hidden">Закрыть меню</span>
+                        </button>
+                        <ul class="main-nav__items">
+                            <li class="main-nav__item main-nav__item_active">
+                                <a class="main-nav__item-link" href="#">Сводка</a>
+                            </li>
+                            <li class="main-nav__item">
+                                <a class="main-nav__item-link" href="#">Устройства</a>
+                            </li>
+                            <li class="main-nav__item main-nav__item_last">
+                                <a class="main-nav__item-link" href="#">Сценарии</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <main class="main page__main">
+            <div class="main__inner">
+                <h2 class="main__title">Главное</h2>
+                <div class="content main__content">
+                    <div class="content__inner">
+                        <div class="content__info">
+                            <div class="content__greeter">
+                                <h3 class="content__greeter-name">Привет, Геннадий!</h3>
+                                <span class="content__greeter-text">Двери и окна закрыты, сигнализация включена.</span>
+                            </div>
+                            <div class="content__forecast">
+                                <div class="content__forecast-item content__forecast-item_home">
+                                    <span class="content__forecast-where">Дома</span>
+                                    <span class="content__forecast-degrees">+23</span>
+                                </div>
+                                <div class="content__forecast-item content__forecast-item__outside">
+                                    <span class="content__forecast-where">За окном</span>
+                                    <span class="content__forecast-degrees">+19
+                                    <svg class="icon content__forecast-icon">
+                                        <use xlink:href='#cloud'/>
+                                    </svg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="scrollable scrollable_vertical">
+                            <div class="scrollable__wrap-scroll scrollable__wrap-scroll_vertical">
+                                <div class="scrollable__arrows arrows_visible main__scrollable__arrows">
+                                    <svg class="arrow arrow_top arrow_top_margin-bottom">
+                                        <use xlink:href='#arrow'></use>
+                                    </svg>
+                                    <svg class="arrow arrow_top">
+                                        <use xlink:href='#arrow'></use>
+                                    </svg>
+                                </div>
+        
+                                <div class="scrollable__content scrollable__content_vertical">
+                                    <div class="task task_first task_vertical light">
+                                        <svg class="task__icon">
+                                            <use xlink:href='#temp'></use>
+                                        </svg>
+                                        <div class="task__text">
+                                            <span class="task__title">Philips Cooler</span>
+                                            <span class="task__info">Начнет охлаждать в 16:30</span>
+                                        </div>
+                                    </div>
+                                    <div class="task task_vertical floor">
+                                        <svg class="task__icon">
+                                            <use xlink:href='#sun'></use>
+                                        </svg>
+                                        <div class="task__text">
+                                            <span class="task__title">Xiaomi Yeelight LED Smart Bulb</span>
+                                            <span class="task__info">Включится в 17:00</span>
+                                        </div>
+                                    </div>
+                                    <div class=" task task_vertical temp">
+                                        <svg class="task__icon">
+                                            <use xlink:href='#temp'></use>
+                                        </svg>
+                                        <div class="task__text">
+                                            <span class="task__title">Philips Cooler</span>
+                                            <span class="task__info">Начнет охлаждать в 16:30</span>
+                                        </div>
+                                    </div>
+                                    <div class=" task task_vertical light">
+                                        <svg class="task__icon">
+                                            <use xlink:href='#sun'></use>
+                                        </svg>
+                                        <div class="task__text">
+                                            <span class="task__title">Xiaomi Yeelight LED Smart Bulb</span>
+                                            <span class="task__info">Включится в 17:00</span>
+                                        </div>
+                                    </div>
+        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <article class="scenarios page__scenarios">
+                <h2 class="scenarios__title">Избранные сценарии</h2>
+                <div class="scrollable scrollable_3-columns">
+                    <div class="arrows scenarios__scrollable__arrows">
+                        <button type="button" class="arrow-button">
+                            <svg class="arrow arrow_top">
+                                <use xlink:href='#arrow'></use>
+                            </svg>
+                        </button>
+                        <button type="button" class="arrow-button">
+                            <svg class="arrow arrow_active arrow_bottom">
+                                <use xlink:href='#arrow'></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="scrollable__wrap-scroll scrollable__wrap-scroll_vertical">
+                        <div class="scrollable__content scrollable__content_3-columns">
+                            <div class="task task_first task_first_3-columns task_small">
+                                <svg class="task__icon">
+                                    <use xlink:href='#sunshine'></use>
+                                </svg>
+                                <div class="task__text">
+                                    <span class="task__title">Выключить весь свет в доме и во дворе</span>
+                                </div>
+                            </div>
+                            <div class="task task_small">
+                                <svg class="task__icon">
+                                    <use xlink:href='#schedule'></use>
+                                </svg>
+                                <div class="task__text">
+                                    <span class="task__title">Я ухожу</span>
+                                </div>
+                            </div>
+                            <div class="task task_small">
+                                <svg class="task__icon">
+                                    <use xlink:href='#sun'></use>
+                                </svg>
+                                <div class="task__text">
+                                    <span class="task__title">Включить свет в коридоре</span>
+                                </div>
+                            </div>
+                            <div class="task task_small">
+                                <svg class="task__icon">
+                                    <use xlink:href='#temp-color'></use>
+                                </svg>
+                                <div class="task__text">
+                                    <span class="task__title">Набрать горячую ванну</span>
+                                    <span class="task__info">Начнется в 18:00</span>
+                                </div>
+                            </div>
+                            <div class="task task_small">
+                                <svg class="task__icon">
+                                    <use xlink:href='#temp-color'></use>
+                                </svg>
+                                <div class="task__text">
+                                    <span class="task__title">Сделать пол тёплым во всей квартире</span>
+                                </div>
+                            </div>
+        
+                        </div>
+                    </div>
+                </div>
+        </article>
+        <section class="devices page__devices">
+            <div class="devices__inner">
+                <h2 class="devices__title">Избранные устройства</h2>
+                <div class="dropdown devices__dropdown">
+                    <button type="button" class="dropdown__button">
+                        <span class="dropdown__button-text">Все</span>
+                        <svg class="arrow arrow_active arrow_bottom arrow_big">
+                            <use xlink:href='#arrow'></use>
+                        </svg></button>
+                    <div class="dropdown__inner">
+                        <ul class="dropdown__options">
+                            <li type="button" class="dropdown__option dropdown__option_active">Все
+        
+                            </li>
+                            <li type="button" class="dropdown__option">Кухня</li>
+                            <li type="button" class="dropdown__option">Зал</li>
+                            <li type="button" class="dropdown__option">Лампочки</li>
+                            <li data-type="Камеры" type="button" class="dropdown__option">Камеры</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="scrollable scrollable_horizontal devices__scrollable">
+                    <div class="arrows devices__scrollable__arrows">
+                        <button type="button" class="arrow-button">
+                            <svg class="arrow arrow_left">
+                                <use xlink:href='#arrow'></use>
+                            </svg>
+                        </button>
+                        <button type="button" class="arrow-button">
+                            <svg class="arrow arrow_right">
+                                <use xlink:href='#arrow'></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="scrollable__wrap-scroll scrollable__wrap-scroll_horizontal devices__scrollable__wrap-scroll">
+                        <div class="scrollable__content scrollable__content_horizontal devices__scrollable__content">
+                            <div class="task task_first task_horizontal floor" role="button">
+                                <svg class="task__icon">
+                                    <use xlink:href='#temp'></use>
+                                </svg>
+                                <div class="task__text">
+                                    <span class="task__title">Philips Cooler</span>
+                                    <span class="task__info">Начнет охлаждать в 16:30</span>
+                                </div>
+                            </div>
+                            <div class="task task_horizontal light" role="button">
+                                <svg class="task__icon">
+                                    <use xlink:href='#sun'></use>
+                                </svg>
+                                <div class="task__text">
+                                    <span class="task__title">Xiaomi Yeelight LED Smart Bulb</span>
+                                    <span class="task__info">Включится в 17:00</span>
+                                </div>
+                            </div>
+                            <div class="task task_horizontal floor" role="button">
+                                <svg class="task__icon">
+                                    <use xlink:href='#temp'></use>
+                                </svg>
+                                <div class="task__text">
+                                    <span class="task__title">Philips Cooler</span>
+                                    <span class="task__info">Начнет охлаждать в 16:30</span>
+                                </div>
+                            </div>
+                            <div class="task task_horizontal temp" role="button">
+                                <svg class="task__icon">
+                                    <use xlink:href='#temp'></use>
+                                </svg>
+                                <div class="task__text">
+                                    <span class="task__title">Philips Cooler</span>
+                                    <span class="task__info">Начнет охлаждать в 16:30</span>
+                                </div>
+                            </div>
+                            <div class="task task_horizontal temp" role="button">
+                                <svg class="task__icon">
+                                    <use xlink:href='#temp'></use>
+                                </svg>
+                                <div class="task__text">
+                                    <span class="task__title">Philips Cooler</span>
+                                    <span class="task__info">Начнет охлаждать в 16:30</span>
+                                </div>
+                            </div>
+                            <div class="task task_horizontal floor" role="button">
+                                <svg class="task__icon">
+                                    <use xlink:href='#temp'></use>
+                                </svg>
+                                <div class="task__text">
+                                    <span class="task__title">Philips Cooler</span>
+                                    <span class="task__info">Начнет охлаждать в 16:30</span>
+                                </div>
+                            </div>
+                            <div class="task task_horizontal temp" role="button">
+                                <svg class="task__icon">
+                                    <use xlink:href='#temp'></use>
+                                </svg>
+                                <div class="task__text">
+                                    <span class="task__title">Philips Cooler</span>
+                                    <span class="task__info">Начнет охлаждать в 16:30</span>
+                                </div>
+                            </div>
+                            <div class="task task_horizontal floor" role="button">
+                                <svg class="task__icon">
+                                    <use xlink:href='#temp'></use>
+                                </svg>
+                                <div class="task__text">
+                                    <span class="task__title">Philips Cooler</span>
+                                    <span class="task__info">Начнет охлаждать в 16:30</span>
+                                </div>
+                            </div>
+                            <div class="task task_horizontal light" role="button">
+                                <svg class="task__icon">
+                                    <use xlink:href='#temp'></use>
+                                </svg>
+                                <div class="task__text">
+                                    <span class="task__title">Philips Cooler</span>
+                                    <span class="task__info">Начнет охлаждать в 16:30</span>
+                                </div>
+                            </div>
+                            <div class="task task_horizontal temp" role="button">
+                                <svg class="task__icon">
+                                    <use xlink:href='#temp'></use>
+                                </svg>
+                                <div class="task__text">
+                                    <span class="task__title">Philips Cooler</span>
+                                    <span class="task__info">Начнет охлаждать в 16:30</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer page__footer">
+            <div class="footer__inner">
+                <nav class="footer__nav">
+                    <ul class="footer__nav-items">
+                        <li class="footer__nav-item">
+                            <a class="footer__nav-link" href="#">Помощь</a>
+                        </li>
+                        <li class="footer__nav-item">
+                            <a class="footer__nav-link" href="#">Обратная связь</a>
+                        </li>
+                        <li class="footer__nav-item">
+                            <a class="footer__nav-link" href="#">Разработчикам</a>
+                        </li>
+                        <li class="footer__nav-item footer__nav-item_last">
+                            <a class="footer__nav-link" href="#">Условия использования</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div>
+                    <span>© 2001–2017  ООО «Яндекс»</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <div class="modal" role="dialog">
+        <div class="modal__inner">
+            <div class="device device_temp modal__device">
+                <h3 class="device__name">Elgato Eve Degree Connected</h3>
+                <span class="device__mode">Включено</span>
+                <div class="device__indicator">
+                    <div class="device__indicator-inner">
+                        <ul class="device__indicator-list">
+                            <li class="device__indicator-item device__indicator-item_active">Вручную</li>
+                            <li class="device__indicator-item">Холодно</li>
+                            <li class="device__indicator-item">Тепло</li>
+                            <li class="device__indicator-item">Жарко</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="device__value-current value-current">
+                    <span class="value-current__numbers device_temp">+23</span>
+                    <svg class="value-current__img">
+                        <use xlink:href='#temp-color'></use>
+                    </svg>
+                </div>
+                <div class="device__regulator regulator regulator__range">
+                    <span class="regulator__value-min regulator__value">-10</span>
+                    <span class="regulator__value-max regulator__value">+30</span>
+                    <input type="range" title="indicator" min="-10" max="30" value="23"
+                           oninput="updateTextInput(this.value);"
+                           class="regulator__value_current">
+                </div>
+    
+            </div>
+    
+    
+            <div class="device device_light modal__device">
+                <h3 class="device__name">Xiaomi Yeelight LED Smart Bulb</h3>
+                <span class="device__mode">Включится в 17:00</span>
+                <div class="device__indicator">
+                    <div class="device__indicator-inner">
+                        <ul class="device__indicator-list">
+                            <li class="device__indicator-item device__indicator-item_active">Вручную</li>
+                            <li class="device__indicator-item">Дневной свет</li>
+                            <li class="device__indicator-item">Вечерний свет</li>
+                            <li class="device__indicator-item device__indicator-item_last">Рассвет</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="device__value-current value-current">
+                    <span class="value-current__numbers"></span>
+                    <svg class="value-current__img">
+                        <use xlink:href='#sun'></use>
+                    </svg>
+                </div>
+                <div class="device__regulator regulator regulator__range">
+            <span class="regulator__value-min regulator__value"><svg class="value-min__img value__img">
+            <use xlink:href='#sun-min'></use>
+            </svg></span>
+                    <span class="regulator__value-max regulator__value"><svg class="value-max__img value__img">
+            <use xlink:href='#sun-max'></use>
+            </svg></span>
+                    <input type="range" title="indicator" min="-10" max="30" value="23" class="regulator__value_current">
+                </div>
+            </div>
+    
+    
+            <div class="device device_floor modal__device ">
+                <div class="hidden-scroll">
+                    <div class="hidden-scroll__wrap">
+                        <div class="hidden-scroll__content"></div>
+                    </div>
+                </div>
+                <h3 class="device__name">Xiaomi Warm Floor</h3>
+                <span class="device__mode">Включено</span>
+    
+                <div class="value-current device__value-current">
+                    <span class="value-current__numbers device_floor">+23</span>
+                    <svg class="value-current__img">
+                        <use xlink:href='#temp-color'></use>
+                    </svg>
+                </div>
+                <svg viewBox="0 0 221 221" class="device__regulator regulator regulator_circle">
+                    <circle cx="50%" cy="50%" r="45%" class="circle-disabled" fill="none"></circle>
+                    <circle cx="50%" cy="50%" r="45%" class="circle-enabled" fill="none"></circle>
+                    <circle cx="50%" cy="50%" r="45%" class="circle-helper" fill="none"></circle>
+                    <circle cx="50%" cy="50%" r="45%" class="circle-background" fill="none"></circle>
+                    <filter id="circle-shadow">
+                        <feDropShadow dx="2" dy="1" stdDeviation="4" flood-color="rgba(134,121,71,0.45)"></feDropShadow>
+                    </filter>
+                    <circle cx="50%" cy="50%" r="40%" fill="white" style="filter:url(#circle-shadow)"></circle>
+                    <path d="M 12 4 L 17 9 L 7 9 z" class="regulator_triangle"></path>
+                    <text x="49%" y="59%" class="regulator_text">+23</text>
+                </svg>
+            </div>
+    
+    
+            <div class="modal__buttons">
+                <button type="button" class="modal__button modal__button_accept">Применить</button>
+                <button type="button" class="modal__button modal__button_decline">Закрыть</button>
+            </div>
+    
+        </div>
+    </div>
+    <script src="./vendor.js"></script>
+</body>
+</html>
