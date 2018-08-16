@@ -43,12 +43,8 @@
   display: flex;
 }
 
-.device_floor {
-}
-
 .device__name {
-
-  margin: 0 0 0.7vh 0;
+  margin: 0 0 .7vh;
   padding: 0;
   @include respond-to(small-portrait) {
     font-size: 4.85vw;
@@ -90,7 +86,7 @@
   }
 
   @include respond-to(big-landscape) {
-    font-size: 0.88vw;
+    font-size: .88vw;
   }
 }
 
@@ -182,9 +178,6 @@
     align-items: center;
     justify-content: flex-end;
   }
-}
-
-.value-current {
 }
 
 .value-current__numbers {

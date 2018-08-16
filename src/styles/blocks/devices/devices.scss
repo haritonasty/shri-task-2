@@ -1,10 +1,7 @@
 @import '../../shared/variables';
 @import '../../shared/mixin';
 
-.devices{
-}
-
-.page__devices{
+.page__devices {
   @include respond-to(small-portrait) {
     margin-bottom: 3vw;
   }
@@ -18,7 +15,7 @@
   }
 }
 
-.devices__inner{
+.devices__inner {
   display: flex;
   flex-direction: column;
   padding: 0;
@@ -26,7 +23,7 @@
   position: relative;
 }
 
-.devices__title{
+.devices__title {
   @include respond-to(small-portrait) {
     font-size: 4.8vw;
     margin: 0 0 4vw 5vw;

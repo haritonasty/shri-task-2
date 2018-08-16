@@ -58,7 +58,6 @@
   position: absolute;
   top: 0;
   left: 0;
-  //height: 100%;
 }
 
 .scrollable__content_vertical {
@@ -102,7 +101,6 @@
     position: absolute;
     bottom: 1.7vw;
     left: 6vw;
-    //fill: $additional-color;
   }
 }
 
@@ -135,14 +133,12 @@
 }
 
 .devices__scrollable[data-overflowing="both"] .arrow_left,
-.devices__scrollable[data-overflowing="left"] .arrow_left {
-  opacity: 1;
-}
-
+.devices__scrollable[data-overflowing="left"] .arrow_left,
 .devices__scrollable[data-overflowing="both"] .arrow_right,
 .devices__scrollable[data-overflowing="right"] .arrow_right {
   opacity: 1;
 }
+
 
 .arrow_top {
   height: 1vw;

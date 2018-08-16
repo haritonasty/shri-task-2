@@ -31,12 +31,24 @@
 }
 
 .page__scenarios {
+  @include respond-to(small-portrait) {
+    margin-bottom: 5vw;
+  }
+
+  @include respond-to(small-landscape) {
+    margin-bottom: 5vw;
+  }
+
+  @include respond-to(big-portrait) {
+    margin-bottom: 5vh;
+  }
+
   @include respond-to(big-landscape) {
     grid-area: a;
   }
 }
 
-.page__devices{
+.page__devices {
   @include respond-to(big-landscape) {
     grid-area: s;
     overflow: hidden;

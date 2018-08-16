@@ -30,14 +30,10 @@
   }
 }
 
-.devices__dropdown {
-
-}
-
 .dropdown__button {
   @include respond-to(small-portrait) {
     position: relative;
-    border: none;
+    border: 0;
     outline: none;
     font-size: 3.3vw;
     font-weight: bold;
@@ -68,9 +64,9 @@
   @include respond-to(small-portrait) {
     cursor: pointer;
     opacity: 0;
-    transition: opacity 0.1s;
-    background: white;
-    box-shadow: 0 2px 4px rgba(black, 0.24);
+    transition: opacity .1s;
+    background: $base-background;
+    box-shadow: 0 2px 4px rgba($primary-color, .24);
   }
 
   @include respond-to(small-landscape) {
@@ -153,7 +149,7 @@
   @include respond-to(big-landscape) {
     padding: 1vh 1vw;
     font-weight: 700;
-    font-size: 0.9vw;
+    font-size: .9vw;
     border-radius: 1.7vw;
     background-color: $block-background;
     margin-right: .6vw;

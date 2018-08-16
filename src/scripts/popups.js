@@ -15,46 +15,44 @@ let popupAccept = document.querySelector(".modal__button_accept");
 
 popupDecline.addEventListener('click', () => {
   togglePopup();
-  for (device of modalDevices){
+  for (let device of modalDevices) {
     device.classList.remove('modal__device_open');
   }
 });
 
 popupAccept.addEventListener('click', () => {
   togglePopup();
-  for (device of modalDevices){
+  for (let device of modalDevices) {
     device.classList.remove('modal__device_open');
   }
 });
 
-for (device of devicesFloor) {
+for (let device of devicesFloor) {
   device.addEventListener('click', () => {
     togglePopup();
     modalDeviceFloor.classList.add('modal__device_open');
     initInteractive();
-  })
+  });
 }
 
-for (device of devicesLight) {
+for (let device of devicesLight) {
   device.addEventListener('click', () => {
     togglePopup();
     modalDeviceLight.classList.add('modal__device_open');
-  })
+  });
 }
 
 for (let i = 0; i < devicesTemp.length; i++) {
   devicesTemp[i].addEventListener('click', () => {
     togglePopup();
     modalDeviceTemp.classList.add('modal__device_open');
-  })
+  });
 }
 
 function togglePopup() {
   popup.classList.toggle('modal_active');
   page.classList.toggle('blur');
 }
-
-
 
 
 function initInteractive() {
@@ -67,11 +65,9 @@ function initInteractive() {
 
   const minTemp = 20;
   const maxTemp = 35;
-
-
   const max = maxTemp - minTemp;
-  const curr = 23 - minTemp;
-  const currPercent = curr * 100 / max;
+
+  const currPercent = (23 - minTemp) * 100 / max;
   const maxScroll = scrollEl.scrollHeight - scrollEl.clientHeight;
   let currScroll = Math.round(maxScroll * currPercent / 100);
   let currScrollPercent = currPercent;
@@ -85,8 +81,7 @@ function initInteractive() {
   text.innerHTML = `+${currGradText}`;
 
   function onScroll() {
-    let top = scrollEl.scrollTop;
-    currScrollPercent = top * 100 / maxScroll;
+    currScrollPercent = scrollEl.scrollTop * 100 / maxScroll;
     tempDash = 526 * currScrollPercent / 100;
     currTrianglePos = 124 * currScrollPercent / 100;
     currGradText = Math.round(currScrollPercent * max / 100 + minTemp);

@@ -19,34 +19,34 @@
   }
 
   @include respond-to(big-landscape) {
+    margin: 2vw 0;
     width: 100%;
-  margin: 2vw 0;
   }
 }
 
 .regulator__value {
-  position: absolute;
-  font-size: 1vw;
   color: $base-background;
+  font-size: 1vw;
+  position: absolute;
   @include respond-to(small-portrait) {
+    font-size: 5vw;
     top: 46%;
-  font-size: 5vw;
     transform: rotate(-90deg);
   }
 
   @include respond-to(small-landscape) {
+    font-size: 3vw;
     top: 23%;
-  font-size: 3vw;
   }
 
   @include respond-to(big-portrait) {
+    font-size: 3vw;
     top: 23%;
-  font-size: 3vw;
   }
 
   @include respond-to(big-landscape) {
+    font-size: 1vw;
     top: 29%;
-  font-size: 1vw;
   }
 }
 
@@ -122,28 +122,15 @@
     border: 0;
   }
 
-  &::-webkit-slider-thumb {
-    -webkit-appearance: none;
-  }
-
   &:focus {
     outline: none;
   }
 
-  /*input[type=range]::-ms-track {*/
-
-  /*!* Hides the slider so custom styles can be added *!*/
-  /*background: transparent;*/
-  /*border-color: transparent;*/
-  /*color: transparent;*/
-  /*outline: none;*/
-  /*}*/
-
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
-    border: 4px solid #FFF;
+    border: 4px solid $base-background;
     border-radius: 50%;
-    box-shadow: 0 1px 10px -7px rgba(0, 0, 0, 0.50), inset 0 0 0 3px rgba(51, 51, 51, 0.10);
+    box-shadow: 0 1px 10px -7px rgba(0, 0, 0, .50), inset 0 0 0 3px rgba(51, 51, 51, .10);
     height: 60px;
     width: 60px;
     background: transparent;
@@ -151,9 +138,9 @@
   }
 
   &::-moz-range-thumb {
-    box-shadow: 0 1px 10px -7px rgba(0, 0, 0, 0.50), inset 0 0 0 3px rgba(51, 51, 51, 0.10);
+    box-shadow: 0 1px 10px -7px rgba(0, 0, 0, .50), inset 0 0 0 3px rgba(51, 51, 51, .10);
     border-radius: 50%;
-    border: 4px solid #FFF;
+    border: 4px solid $base-background;
     height: 60px;
     width: 60px;
     background: transparent;
@@ -161,56 +148,64 @@
     box-sizing: border-box;
   }
 
-  /*input[type=range]::-ms-thumb {*/
-  /*box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;*/
-  /*border: 1px solid #000000;*/
-  /*height: 36px;*/
-  /*width: 16px;*/
-  /*border-radius: 3px;*/
-  /*background: #ffffff;*/
-  /*cursor: pointer;*/
-  /*}*/
+  &::-ms-thumb {
+    box-shadow: 0 1px 10px -7px rgba(0, 0, 0, .50), inset 0 0 0 3px rgba(51, 51, 51, .10);
+    border-radius: 50%;
+    border: 4px solid $base-background;
+    height: 60px;
+    width: 60px;
+    background: transparent;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
 
   &::-webkit-slider-runnable-track {
-    height: 60px;
     border-radius: 35px;
     cursor: pointer;
+    height: 60px;
   }
+
+  &::-moz-range-track {
+    border-color: transparent;
+    border-radius: 35px;
+    color: transparent;
+    cursor: pointer;
+    height: 60px;
+  }
+
+  &::-ms-track {
+    border-color: transparent;
+    border-radius: 35px;
+    color: transparent;
+    cursor: pointer;
+    background: transparent;
+    height: 60px;
+    outline: none;
+  }
+
 }
 
 .device_light {
   & .regulator__value_current::-webkit-slider-runnable-track {
-    background-image: linear-gradient(90deg, #FFE88C 0%, #FFB100 100%);
+    background-image: $device-light-gradient;
   }
   & .regulator__value_current::-moz-range-track {
-    background-image: linear-gradient(90deg, #FFE88C 0%, #FFB100 100%);
+    background-image: $device-light-gradient;
+  }
+  & .regulator__value_current::-ms-track {
+    background-image: $device-light-gradient;
   }
 }
 
 .device_temp {
   & .regulator__value_current::-webkit-slider-runnable-track {
-    background-image: linear-gradient(90deg, #068FFF 2%, #FFD800 51%, #F76B1C 100%);
+    background-image: $device-temp-gradient;
   }
   & .regulator__value_current::-moz-range-track {
-    background-image: linear-gradient(90deg, #068FFF 2%, #FFD800 51%, #F76B1C 100%);
+    background-image: $device-temp-gradient;
+  }
+  & .regulator__value_current::-ms-track {
+    background-image: $device-temp-gradient;
   }
 }
 
-.regulator__value_current::-moz-range-track {
-  height: 60px;
-  border-radius: 35px;
-  cursor: pointer;
-  border-color: transparent;
-  color: transparent;
-}
-
-/* All the same stuff for IE */
-/*input[type=range]::-ms-thumb {*/
-/*box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;*/
-/*border: 1px solid #000000;*/
-/*height: 36px;*/
-/*width: 16px;*/
-/*border-radius: 3px;*/
-/*background: #ffffff;*/
-/*cursor: pointer;*/
-/*}*/

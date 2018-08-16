@@ -11,11 +11,7 @@
   box-sizing: border-box;
   justify-content: space-between;
 
-  &:hover {
-    background-color: $base-background;
-    box-shadow: 0 2px 6px 0 rgba(197, 186, 186, .50);
-    transition-duration: .1s;
-  }
+
 
   @include respond-to(small-portrait) {
     min-width: 52vw;
@@ -44,13 +40,18 @@
   }
 
   @include respond-to(big-landscape) {
-    //margin-rightArrow: 4vw;
     border-radius: 2.3vw;
     min-width: 13.5vw;
     min-height: 8vw;
     margin-left: 0;
     margin-top: 2.1vh;
-    padding: 1.4vh 0.5vw 2vh 1.1vw;
+    padding: 1.4vh .5vw 2vh 1.1vw;
+  }
+
+  &:hover {
+    background-color: $base-background;
+    box-shadow: 0 2px 6px 0 rgba(197, 186, 186, .50);
+    transition-duration: .1s;
   }
 }
 
@@ -139,7 +140,7 @@
 }
 
 .task__title {
-  margin-bottom: 0.7vh;
+  margin-bottom: .7vh;
   @include respond-to(small-portrait) {
     font-size: 3.8vw;
   }

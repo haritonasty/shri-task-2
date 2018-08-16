@@ -7,8 +7,7 @@
 
 .regulator_circle {
   height: 100%;
-  //transform-origin: 50% 50%;
-  transform: rotate(0.325turn);
+  transform: rotate(.325turn);
   align-self: center;
   stroke-width: 22px;
   @include respond-to(small-portrait) {
@@ -34,7 +33,7 @@
 
 .circle-disabled {
   stroke-dasharray: 525, 625;
-  stroke: rgba(51, 51, 51, 0.7);
+  stroke: rgba(51, 51, 51, .7);
 }
 
 .regulator_text {
@@ -46,13 +45,13 @@
 }
 
 .circle-helper {
-  transform: rotate(-0.2turn);
+  transform: rotate(-.2turn);
   stroke-dasharray: 125, 625;
   stroke: $base-background;
 }
 
 .circle-background {
-  stroke-dasharray: 3.3, 0.9;
+  stroke-dasharray: 3.3, .9;
   stroke-width: 23px;
   stroke: $base-background;
 }
@@ -68,6 +67,6 @@
   stroke-linejoin: round;
   stroke-width: 2px;
   transform-origin: 50% 50%;
-  transform: rotate(calc(0.235turn + var(--pos) * 2.69)) translateX(110px) translateY(20px);
+  transform: rotate(calc(.235turn + var(--pos) * 2.69)) translateX(110px) translateY(20px);
 }
 

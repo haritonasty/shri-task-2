@@ -1,12 +1,14 @@
 $base-color: #333;
 $primary-color: #000;
 $additional-color: #858585;
-$yellow:#FFD93E;
-
+$yellow: #ffd93e;
 
 $base-background: #fff;
 $block-background: #f7f7f7;
 $modal-background: rgba(0, 0, 0, .3);
 $modal-background-hidden: rgba(0, 0, 0, 0);
+
+$device-light-gradient: linear-gradient(90deg, #ffe88c 0%, #ffb100 100%);
+$device-temp-gradient: linear-gradient(90deg, #068fff 2%, #ffd800 51%, #f76b1c 100%);
 
 $border: #f0f0f0;
