@@ -1,6 +1,15 @@
 @import '../../shared/variables';
 @import '../../shared/mixin';
 
+.page__main {
+  @include respond-to(small-portrait) {
+    margin-top: 17vw;
+  }
+  @include respond-to(small-landscape) {
+    margin-top: 10vw;
+  }
+}
+
 .main__inner {
   display: flex;
   flex-direction: column;

@@ -8,6 +8,7 @@
   justify-content: center;
   overflow: hidden;
   width: 100%;
+  background-color: $base-background;
 
   @include respond-to(small-portrait) {
     height: 17vw;
@@ -29,6 +30,20 @@
 
 .page__header {
   position: relative;
+  @include respond-to(small-portrait) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  @include respond-to(small-landscape) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
 }
 
 .header__inner {
